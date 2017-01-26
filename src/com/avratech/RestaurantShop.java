@@ -5,36 +5,36 @@ package com.avratech;
  */
 public class RestaurantShop implements Shop {
 
-    double sqr_meters = 0;
-    double overhead = 0;
-    double revenue = 0;
-    double base_rent = 0;
+    private double sqr_meters;
+    private double overhead;
+    private double revenue;
+    private double base_rent;
 
     @Override
     public double size(double sqr_meters) {
-        return 0;
+        return sqr_meters;
     }
 
     @Override
     public double store_expenses(double overhead) {
-        return 0;
+        return overhead;
     }
 
     @Override
     public double gross_sales(double revenue) {
-        return 0;
+        return revenue;
     }
 
     @Override
     public double base_rent(double rent) {
-        return 0;
+        return rent;
     }
 
     private RestaurantShop(double sqr_meters, double overhead, double revenue, double base_rent) {
-        this.sqr_meters = sqr_meters;
-        this.overhead = overhead;
-        this.revenue = revenue;
-        this.base_rent = base_rent;
+        setBase_rent(base_rent);
+        setOverhead(overhead);
+        setRevenue(revenue);
+        setSqr_meters(sqr_meters);
     }
 
     public double getSqr_meters() {
@@ -53,21 +53,19 @@ public class RestaurantShop implements Shop {
         return base_rent;
     }
 
-    public void setSqr_meters(double sqr_meters) {
+    private void setSqr_meters(double sqr_meters) {
         this.sqr_meters = sqr_meters;
     }
 
-    public void setRevenue(double revenue) {
+    private void setRevenue(double revenue) {
         this.revenue = revenue;
     }
 
-    public void setBase_rent(double base_rent) {
+    private void setBase_rent(double base_rent) {
         this.base_rent = base_rent;
     }
-    public void setOverhead(double overhead) {
+    private void setOverhead(double overhead) {
         this.overhead = overhead;
     }
-
-
 
 }
