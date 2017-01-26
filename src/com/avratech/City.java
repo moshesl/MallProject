@@ -5,9 +5,13 @@ package com.avratech;
  */
 public enum  City {
     JERUSALEM,
-    NEWYORK,
-    LASANGELES,
+    NEW_YORK,
+    LAS_ANGLES,
     PARIS,
-    LONDON,
+    LONDON;
 
+    @Override
+    public String toString() {
+        return "{}";
+    }
 }
