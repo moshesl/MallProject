@@ -1,5 +1,9 @@
 package com.avratech;
 
+import java.awt.*;
+import java.awt.geom.Point2D;
+import java.util.ArrayList;
+
 /**
  * Created by stu on 25/01/17.
  */
@@ -9,6 +13,14 @@ public class RestaurantShop implements Shop {
     private double overhead;
     private double revenue;
     private double base_rent;
+    private Point point;
+    private static ArrayList<Point>coordinates=null;
+
+
+    @Override
+    public Point point(int x, int y) {
+        return point;
+    }
 
     @Override
     public double size(double sqr_meters) {
@@ -30,11 +42,38 @@ public class RestaurantShop implements Shop {
         return rent;
     }
 
-    private RestaurantShop(double sqr_meters, double overhead, double revenue, double base_rent) {
+    private RestaurantShop(double sqr_meters, double overhead, double revenue, double base_rent, int x, int y) {
         setBase_rent(base_rent);
         setOverhead(overhead);
         setRevenue(revenue);
         setSqr_meters(sqr_meters);
+        setPoint(x, y);
+    }
+    public void getCoordinates(){
+        String s = this.point.toString();
+    }
+    private void getDistance(Shop other){
+        this.point.distance((Point2D) other);
+    }
+
+    private void shortestDistance(){
+
+    }
+    private void setPoint(int x, int y) {
+        if ((x<10)&&(y<10)){
+            System.out.println("Coordinates must be under 10.");
+            return;
+        }
+        if ((!(coordinates.contains(new Point(x,y))))&&((x<10)&&(y<10))){
+        this.point = new Point(x, y);
+        coordinates.add(this.point);}
+        else{
+            System.out.println("These coordinates are already used. Please set new coordinates");
+        }
+    }
+
+    public Point getPoint() {
+        return point;
     }
 
     public double getSqr_meters() {

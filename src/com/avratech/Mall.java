@@ -12,6 +12,7 @@ public class Mall {
     private ArrayList<Stand> stands = new ArrayList<>();
     private ArrayList<Eateries> eateries = new ArrayList<>();
     private ArrayList<DepartmentStore> departmentStores = new ArrayList<>();
+    private ArrayList<Shop> coordinates = new ArrayList<>();
 
     private String name;
     private Owner owner;
@@ -45,6 +46,11 @@ public class Mall {
 
     public Location getLocation() {
         return location;
+    }
+
+    public static void coordinates (){
+
+
     }
 
 }
