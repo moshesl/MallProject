@@ -49,14 +49,22 @@ public class RestaurantShop implements Shop {
         setSqr_meters(sqr_meters);
         setPoint(x, y);
     }
-    public void getCoordinates(){
-        String s = this.point.toString();
+    public  String getCoordinates(){
+        return this.point.toString();
     }
-    private void getDistance(Shop other){
-        this.point.distance((Point2D) other);
-    }
+//    private void getDistance(Shop other){
+//        this.point.distance((Point2D) other);
+//    }
 
-    private void shortestDistance(){
+    private void shortestDistance(Shop other1, Shop other2, Shop other3){
+        Point origin = new Point();
+        Double origin_1 = origin.distance((Point2D)other1);
+        Double origin_2 = origin.distance((Point2D)other2);
+        Double origin_3 = origin.distance((Point2D)other3);
+        Double other1_2 = origin.distance((Point2D)other2);
+        Double other1_3 = origin.distance((Point2D)other3);
+        Double other2_3 = origin.distance((Point2D)other3);
+
 
     }
     private void setPoint(int x, int y) {
