@@ -61,9 +61,9 @@ public class RestaurantShop implements Shop {
         Double origin_1 = origin.distance((Point2D)other1);
         Double origin_2 = origin.distance((Point2D)other2);
         Double origin_3 = origin.distance((Point2D)other3);
-        Double other1_2 = origin.distance((Point2D)other2);
-        Double other1_3 = origin.distance((Point2D)other3);
-        Double other2_3 = origin.distance((Point2D)other3);
+        Double other1_2 = ((Point2D)other1).distance((Point2D)other2);
+        Double other1_3 = ((Point2D)other1).distance((Point2D)other3);
+        Double other2_3 = ((Point2D)other2).distance((Point2D)other3);
 
 
     }
