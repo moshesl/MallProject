@@ -3,8 +3,7 @@ package com.avratech;
 /**
  * Created by stu on 25/01/17.
  */
-public class RestaurantShop implements Shop {
-
+public class JeweleryShop implements Shop{
     private double sqr_meters;
     private double overhead;
     private double revenue;
@@ -30,11 +29,11 @@ public class RestaurantShop implements Shop {
         return rent;
     }
 
-    private RestaurantShop(double sqr_meters, double overhead, double revenue, double base_rent) {
-        setBase_rent(base_rent);
-        setOverhead(overhead);
-        setRevenue(revenue);
+    private JeweleryShop(double sqr_meters, double overhead, double revenue, double base_rent) {
         setSqr_meters(sqr_meters);
+        setRevenue(revenue);
+        setOverhead(overhead);
+        setBase_rent(base_rent);
     }
 
     public double getSqr_meters() {
@@ -67,5 +66,7 @@ public class RestaurantShop implements Shop {
     private void setOverhead(double overhead) {
         this.overhead = overhead;
     }
+
+
 
 }
