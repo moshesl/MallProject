@@ -1,5 +1,7 @@
 package com.avratech;
 
+import java.awt.*;
+
 /**
  * Created by stu on 25/01/17.
  */
@@ -8,6 +10,11 @@ public class ClothingShop implements Shop {
     private double overhead;
     private double revenue;
     private double base_rent;
+
+    @Override
+    public Point point(int x, int y) {
+        return null;
+    }
 
     @Override
     public double size(double sqr_meters) {
