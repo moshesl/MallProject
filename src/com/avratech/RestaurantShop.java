@@ -2,24 +2,29 @@ package com.avratech;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created by stu on 25/01/17.
  */
 public class RestaurantShop implements Shop {
-
+    private double x,y;
     private double sqr_meters;
     private double overhead;
     private double revenue;
     private double base_rent;
-    private Point point;
-    private static ArrayList<Point>coordinates=null;
 
+    private static ArrayList<List>coordinates;
 
     @Override
-    public Point point(int x, int y) {
-        return point;
+    public double x(double x) {
+        return 0;
+    }
+
+    @Override
+    public double y(double y) {
+        return 0;
     }
 
     @Override
@@ -47,27 +52,32 @@ public class RestaurantShop implements Shop {
         setOverhead(overhead);
         setRevenue(revenue);
         setSqr_meters(sqr_meters);
-        setPoint(x, y);
-    }
-    public  String getCoordinates(){
-        return this.point.toString();
+        setX(x);
+        setY(y);
     }
 
-    private void setPoint(int x, int y) {
-        if ((x<10)&&(y<10)){
-            System.out.println("Coordinates must be under 10.");
-            return;
-        }
-        if ((!(coordinates.contains(new Point(x,y))))&&((x<10)&&(y<10))){
-        this.point = new Point(x, y);
-        coordinates.add(this.point);}
-        else{
-            System.out.println("These coordinates are already used. Please set new coordinates");
-        }
+    public static ArrayList<List> getCoordinates() {
+        return coordinates;
     }
 
-    public Point getPoint() {
-        return point;
+    public static void setCoordinates(ArrayList<List> coordinates) {
+        RestaurantShop.coordinates = coordinates;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
     }
 
     public double getSqr_meters() {
@@ -97,6 +107,7 @@ public class RestaurantShop implements Shop {
     private void setBase_rent(double base_rent) {
         this.base_rent = base_rent;
     }
+
     private void setOverhead(double overhead) {
         this.overhead = overhead;
     }
