@@ -6,9 +6,9 @@ import java.awt.*;
  * Created by stu on 25/01/17.
  */
 public interface Shop {
-    double size(double sqr_meters);
-    double store_expenses(double overhead);
-    double gross_sales(double revenue);
-    double base_rent(double rent);
-    Point point(int x, int y);
+    double size();
+    double store_expenses();
+    double gross_sales();
+    double base_rent();
+    Point point();
 }

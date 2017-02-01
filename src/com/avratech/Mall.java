@@ -44,7 +44,7 @@ public class Mall {
         return owner;
     }
 
-    public Location getLocation() {
+    public Location getMyLocation() {
         return location;
     }
 

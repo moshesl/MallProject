@@ -13,57 +13,62 @@ public class RestaurantShop implements Shop {
     private double overhead;
     private double revenue;
     private double base_rent;
-    private Point point;
-    private static ArrayList<Point>coordinates=null;
+    public Point point=new Point();
+    private static ArrayList<Point> coordinates= new ArrayList<>();
 
 
     @Override
-    public Point point(int x, int y) {
+    public Point point() {
         return point;
     }
 
     @Override
-    public double size(double sqr_meters) {
+    public double size() {
         return sqr_meters;
     }
 
     @Override
-    public double store_expenses(double overhead) {
+    public double store_expenses() {
         return overhead;
     }
 
     @Override
-    public double gross_sales(double revenue) {
+    public double gross_sales() {
         return revenue;
     }
 
     @Override
-    public double base_rent(double rent) {
-        return rent;
+    public double base_rent() {
+        return base_rent;
     }
 
-    private RestaurantShop(double sqr_meters, double overhead, double revenue, double base_rent, int x, int y) {
+    public RestaurantShop(double sqr_meters, double overhead, double revenue, double base_rent, int x, int y) {
         setBase_rent(base_rent);
         setOverhead(overhead);
         setRevenue(revenue);
         setSqr_meters(sqr_meters);
         setPoint(x, y);
     }
-    public  String getCoordinates(){
+
+    public String getCoordinates() {
         return this.point.toString();
     }
 
     private void setPoint(int x, int y) {
-        if ((x<10)&&(y<10)){
-            System.out.println("Coordinates must be under 10.");
-            return;
-        }
-        if ((!(coordinates.contains(new Point(x,y))))&&((x<10)&&(y<10))){
         this.point = new Point(x, y);
-        coordinates.add(this.point);}
-        else{
-            System.out.println("These coordinates are already used. Please set new coordinates");
-        }
+        //this.point = my;
+//        if (!(x < 10) && (y < 10)) {
+//            System.out.println("Coordinates must be under 10.");
+//            return;
+//        }
+//            for (Point p : coordinates)
+//                if (p.getLocation() != (this.point = new Point(x, y)).getLocation()) {
+//                    this.point = new Point(x, y);
+//                    coordinates.add(this.point);
+//                } else {
+//                    this.point = null;
+//                    System.out.println("Please set new coordinates");
+//                }
     }
 
     public Point getPoint() {
@@ -97,6 +102,7 @@ public class RestaurantShop implements Shop {
     private void setBase_rent(double base_rent) {
         this.base_rent = base_rent;
     }
+
     private void setOverhead(double overhead) {
         this.overhead = overhead;
     }
