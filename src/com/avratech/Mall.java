@@ -50,7 +50,8 @@ public class Mall {
 
     public static void coordinates (){
 
-
     }
+
+
 
 }

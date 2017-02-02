@@ -9,32 +9,32 @@ import java.util.Stack;
  * Created by stu on 31/01/17.
  */
 public class ShortestRoute {
-    private Point point;
+
     int number_of_nodes;
 
+
+    public double findDst(RestaurantShop shop1, RestaurantShop shop2){
+        return Math.sqrt(
+                (shop1.getX() - shop2.getX()) * (shop1.getX() - shop2.getX()) +
+                        (shop1.getY() - shop2.getY()) *  (shop1.getY() - shop2.getY()));
+    }
 
     public double[][]createMatrix(Shop...other) {
         Point origin = new Point();
         number_of_nodes = other.length;
         double[][] matrix = new double[0][];
-        for (Shop s : other
-                ) {
+        for (Shop s : other) {
             int i = 1;
             i++;
-            for (Shop t : other
-                    ) {
+            for (Shop t : other) {
                 int j = 1;
                 j++;
                 matrix = new double[other.length][other.length];
                 matrix[i][j] = ((Point2D) s).distance((Point2D) t);
             }
-
         }
         return matrix;
     }
-
-
-
 
 
     public class TSPNearestNeighbour {

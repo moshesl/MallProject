@@ -1,6 +1,8 @@
 package com.avratech;
 
-/**
+import java.awt.*;
+
+/*
  * Created by stu on 25/01/17.
  */
 public class JeweleryShop implements Shop{
@@ -8,6 +10,17 @@ public class JeweleryShop implements Shop{
     private double overhead;
     private double revenue;
     private double base_rent;
+    private double x, y;
+
+    @Override
+    public double x(double x) {
+        return 0;
+    }
+
+    @Override
+    public double y(double y) {
+        return 0;
+    }
 
     @Override
     public double size(double sqr_meters) {
@@ -29,11 +42,30 @@ public class JeweleryShop implements Shop{
         return rent;
     }
 
-    private JeweleryShop(double sqr_meters, double overhead, double revenue, double base_rent) {
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    private JeweleryShop(double sqr_meters, double overhead, double revenue, double base_rent, int x, int y) {
         setSqr_meters(sqr_meters);
         setRevenue(revenue);
         setOverhead(overhead);
         setBase_rent(base_rent);
+        setX(x);
+        setY(y);
+
     }
 
     public double getSqr_meters() {
@@ -63,6 +95,7 @@ public class JeweleryShop implements Shop{
     private void setBase_rent(double base_rent) {
         this.base_rent = base_rent;
     }
+
     private void setOverhead(double overhead) {
         this.overhead = overhead;
     }

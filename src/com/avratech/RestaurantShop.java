@@ -47,7 +47,7 @@ public class RestaurantShop implements Shop {
         return rent;
     }
 
-    private RestaurantShop(double sqr_meters, double overhead, double revenue, double base_rent, int x, int y) {
+    public RestaurantShop(double sqr_meters, double overhead, double revenue, double base_rent, int x, int y) {
         setBase_rent(base_rent);
         setOverhead(overhead);
         setRevenue(revenue);

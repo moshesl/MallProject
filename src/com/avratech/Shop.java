@@ -10,5 +10,7 @@ public interface Shop {
     double store_expenses(double overhead);
     double gross_sales(double revenue);
     double base_rent(double rent);
-    Point point(int x, int y);
+    double x(double x);
+    double y(double y);
+
 }

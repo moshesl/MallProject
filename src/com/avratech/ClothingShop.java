@@ -12,8 +12,13 @@ public class ClothingShop implements Shop {
     private double base_rent;
 
     @Override
-    public Point point(int x, int y) {
-        return null;
+    public double x(double x) {
+        return 0;
+    }
+
+    @Override
+    public double y(double y) {
+        return 0;
     }
 
     @Override
